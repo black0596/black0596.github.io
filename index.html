@@ -280,7 +280,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/20/移动端多指操作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/移动端布局之flex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="麻油叶">
@@ -302,8 +302,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/20/移动端多指操作/" itemprop="url">
-                  移动端多指操作
+                <a class="post-title-link" href="/2017/04/04/移动端布局之flex/" itemprop="url">
+                  移动端布局之flex
                 </a>
               
             
@@ -319,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T12:12:49+08:00">
-                2017-03-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T14:27:36+08:00">
+                2017-04-04
               </time>
             
 
@@ -329,28 +329,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -379,7 +357,102 @@
       
         
           
-            <p><img src="http://upload-images.jianshu.io/upload_images/4259327-4c435be0939d0a38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="缩放.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;</div><div class="line">    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</div><div class="line">    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;</div><div class="line">    &lt;title&gt;缩放&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        #box&#123;width:100px;</div><div class="line">            height:100px;</div><div class="line">        background: red;&#125;</div><div class="line">        html,body&#123;width:100%;height:100%; overflow:hidden;&#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;script&gt;</div><div class="line"></div><div class="line">            document.addEventListener(&apos;DOMContentLoaded&apos;,function() &#123;</div><div class="line">                var c=1;//先定义一个初始值</div><div class="line">                var oBox=document.getElementById(&apos;box&apos;);</div><div class="line">                document.addEventListener(&apos;touchstart&apos;,function (ev) &#123;//手指点下</div><div class="line">                    var oldC=c;//把初始值放到oldC里面</div><div class="line">                   function getC(ev) &#123;</div><div class="line">                       var x1=ev.targetTouches[0].pageX;</div><div class="line">                       var y1=ev.targetTouches[0].pageY;//两根手指缩放肯定需要两根手指，【0】第一根手指的Xy的坐标</div><div class="line"></div><div class="line">                       var x2=ev.targetTouches[1].pageX;//第二根手指的坐标</div><div class="line">                       var y2=ev.targetTouches[1].pageY;</div><div class="line"></div><div class="line">                       var a=x1-x2;//第一根手指的pageX-第二根手指的pageX，这样正好是一个之间三角形 得到两个直角边；</div><div class="line">                       var b=y1-y2;//同上</div><div class="line">                       return Math.sqrt(a*a+b*b)//已知两个直角边开平方得出 斜角边</div><div class="line">                   &#125;</div><div class="line">                   if(ev.targetTouches.length==2)&#123;//判断是否是两根手指 是的话  把两根手指点上去的时候的 斜脚边的初始值 放到 downC里面</div><div class="line">                       var downC=getC(ev);</div><div class="line">                   &#125;</div><div class="line">                   document.addEventListener(&apos;touchmove&apos;,function (ev) &#123; //手指移动的时候</div><div class="line">                       if(ev.tatgetTouches.length==2)&#123;//判断移动的时候是否是两根手指</div><div class="line">                           c=getC(ev)/downC+oldC;//这个时候的getC(ev)是move时候的，用移动后的斜脚边的值除没移动的值加上他的初始值，</div><div class="line">                           oBox.style.webkitTransform=&apos;scale(&apos;+c+&apos;)&apos;;//通过scale----2D缩放转换</div><div class="line">                       &#125;</div><div class="line"></div><div class="line">                   &#125;,false)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">                &#125;,false)</div><div class="line">            &#125;,false)</div><div class="line"></div><div class="line">    &lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
+            <p>Flex 基本概念：</p>
+<p>在 flex 容器中默认存在两条轴，水平主轴(main axis) 和垂直的交叉轴(cross axis)，这是默认的设置，当然你可以通过修改使垂直方向变为主轴，水平方向变为交叉轴，这个我们后面再说。</p>
+<p>在容器中的每个单元块被称之为 flex item，每个项目占据的主轴空间为 (main size), 占据的交叉轴的空间为 (cross size)。</p>
+<p>这里需要强调，不能先入为主认为宽度就是 main size，高度就是 cross size，这个还要取决于你主轴的方向，如果你垂直方向是主轴，那么项目的高度就是 main size。</p>
+<p>Flex 容器：</p>
+<p>首先，实现 flex 布局需要先指定一个容器，任何一个容器都可以被置顶为 flex 布局，这样容器内部的元素就可以使用 flex 来进行布局。</p>
+<p>分别生成一个块状或行内的 flex 容器盒子。简单说来，如果你使用块元素如 div，你就可以使用 flex，而如果你使用行内元素，你可以使用 inline-flex。</p>
+<p>需要注意的是：当时设置 flex 布局之后，子元素的 float、clear、vertical-align 的属性将会失效。</p>
+<p>有下面六种属性可以设置在容器上，它们分别是：</p>
+<p>flex-direction</p>
+<p>flex-wrap</p>
+<p>flex-flow</p>
+<p>justify-content</p>
+<p>align-items</p>
+<p>align-content</p>
+<p>flex-direction: 决定主轴的方向(即项目的排列方向)</p>
+<p>默认值：row，主轴为水平方向，起点在左端。</p>
+<p>row-reverse：主轴为水平方向，起点在右端</p>
+<p>column：主轴为垂直方向，起点在上沿</p>
+<p>column-reverse：主轴为垂直方向，起点在下沿</p>
+<p>flex-wrap: 决定容器内项目是否可换行</p>
+<p>默认情况下，项目都排在主轴线上，使用 flex-wrap 可实现项目的换行。</p>
+<p>默认值：nowrap 不换行，即当主轴尺寸固定时，当空间不足时，项目尺寸会随之调整而并不会挤到下一行。</p>
+<p>wrap：项目主轴总尺寸超出容器时换行，第一行在上方</p>
+<p>wrap-reverse：换行，第一行在下方</p>
+<p>flex-flow: flex-direction 和 flex-wrap 的简写形式</p>
+<p>默认值为: row nowrap，感觉没什么卵用，老老实实分开写就好了。这样就不用记住这个属性了。</p>
+<p>justify-content：定义了项目在主轴的对齐方式。</p>
+<p>建立在主轴为水平方向时测试，即 flex-direction: row</p>
+<p>默认值: flex-start 左对齐</p>
+<p>flex-end：右对齐</p>
+<p>center：居中</p>
+<p>space-between：两端对齐，项目之间的间隔相等，即剩余空间等分成间隙。</p>
+<p>space-around：每个项目两侧的间隔相等，所以项目之间的间隔比项目与边缘的间隔大一倍。</p>
+<p>align-items: 定义了项目在交叉轴上的对齐方式</p>
+<p>建立在主轴为水平方向时测试，即 flex-direction: row</p>
+<p>默认值为 stretch 即如果项目未设置高度或者设为 auto，将占满整个容器的高度。</p>
+<p>假设容器高度设置为 100px，而项目都没有设置高度的情况下，则项目的高度也为 100px。</p>
+<p>flex-start：交叉轴的起点对齐</p>
+<p>假设容器高度设置为 100px，而项目分别为 20px, 40px, 60px, 80px, 100px, </p>
+<p>flex-end：交叉轴的终点对齐</p>
+<p>center：交叉轴的中点对齐</p>
+<p>baseline: 项目的第一行文字的基线对齐</p>
+<p>以文字的底部为主，仔细看图可以理解。</p>
+<p>align-content: 定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用</p>
+<p>这个这样理解：</p>
+<p>当你 flex-wrap 设置为 nowrap 的时候，容器仅存在一根轴线，因为项目不会换行，就不会产生多条轴线。</p>
+<p>当你 flex-wrap 设置为 wrap 的时候，容器可能会出现多条轴线，这时候你就需要去设置多条轴线之间的对齐方式了。</p>
+<p>建立在主轴为水平方向时测试，即 flex-direction: row, flex-wrap: wrap</p>
+<p>默认值为 stretch，</p>
+<p>当值为 stretch 时会三条轴线平分容器的垂直方向上的空间。</p>
+<p>值得注意的是，虽然在每条轴线上项目的默认值也为 stretch，但是由于我每个项目我都设置了高度，所以它并没有撑开整个容器：</p>
+<p>这个我在前面也有提到(align-items)，这里重点还是理解三条轴线会平分垂直轴上的空间。</p>
+<p>flex-start：轴线全部在交叉轴上的起点对齐</p>
+<p>flex-end：轴线全部在交叉轴上的终点对齐</p>
+<p>center：轴线全部在交叉轴上的中间对齐</p>
+<p>space-between：轴线两端对齐，之间的间隔相等，即剩余空间等分成间隙。</p>
+<p>space-around：每个轴线两侧的间隔相等，所以轴线之间的间隔比轴线与边缘的间隔大一倍。</p>
+<p>到这里关于容器上的所有属性都讲完了，接下来就来讲讲关于在 flex item 上的属性。</p>
+<p>Flex 项目属性：</p>
+<p>有六种属性可运用在 item 项目上：</p>
+<p>order</p>
+<p>flex-basis</p>
+<p>flex-grow</p>
+<p>flex-shrink</p>
+<p>flex</p>
+<p>align-self</p>
+<p>order: 定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为 0</p>
+<p>在 HTML 结构中，虽然 -2，-1 的 item 排在后面，但是由于分别设置了 order，使之能够排到最前面。</p>
+<p>flex-basis: 定义了在分配多余空间之前，项目占据的主轴空间，浏览器根据这个属性，计算主轴是否有多余空间</p>
+<p>默认值：auto，即项目本来的大小, 这时候 item 的宽高取决于 width 或 height 的值。</p>
+<p>当主轴为水平方向的时候，当设置了 flex-basis，项目的宽度设置值会失效，flex-basis 需要跟 flex-grow 和 flex-shrink 配合使用才能发挥效果。</p>
+<p>flex-grow: 定义项目的放大比例</p>
+<p>默认值为 0，即如果存在剩余空间，也不放大</p>
+<p>当所有的项目都以 flex-basis 的值进行排列后，仍有剩余空间，那么这时候 flex-grow 就会发挥作用了。</p>
+<p>如果所有项目的 flex-grow 属性都为 1，则它们将等分剩余空间。(如果有的话)</p>
+<p>如果一个项目的 flex-grow 属性为 2，其他项目都为 1，则前者占据的剩余空间将比其他项多一倍。</p>
+<p>当然如果当所有项目以 flex-basis 的值排列完后发现空间不够了，且 flex-wrap：nowrap 时，此时 flex-grow 则不起作用了，这时候就需要接下来的这个属性。</p>
+<p>flex-shrink: 定义了项目的缩小比例</p>
+<p>默认值: 1，即如果空间不足，该项目将缩小，负值对该属性无效。</p>
+<p>这里可以看出，虽然每个项目都设置了宽度为 50px，但是由于自身容器宽度只有 200px，这时候每个项目会被同比例进行缩小，因为默认值为 1。</p>
+<p>同理可得：</p>
+<p>如果所有项目的 flex-shrink 属性都为 1，当空间不足时，都将等比例缩小。 </p>
+<p>如果一个项目的 flex-shrink 属性为 0，其他项目都为 1，则空间不足时，前者不缩小。</p>
+<p>flex: flex-grow, flex-shrink 和 flex-basis的简写</p>
+<p>默认值：0 1 auto， 即不放大，可缩小，大小与 width、height</p>
+<p>有关快捷值：auto (1 1 auto) 和 none (0 0 auto)</p>
+<p>建议优先使用这个属性，而不是单独写三个分离的属性。</p>
+<p>flex-grow 和 flex-shrink 可缺省，故可单单设置: flex: 2;</p>
+<p>grow 和 shrink 是一对双胞胎，grow 表示伸张因子，shrink 表示是收缩因子。</p>
+<p>grow 在 flex 容器下的子元素的宽度和比容器和小的时候起作用。 grow 定义了子元素的尺寸增长因子，容器中除去子元素之和剩下的尺寸会按照各个子元素的 grow 值进行平分加大各个子元素上。</p>
+<p>align-self: 允许单个项目有与其他项目不一样的对齐方式</p>
+<p>单个项目覆盖 align-items 定义的属性</p>
+<p>默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch。</p>
+<p>这个跟 align-items 属性时一样的，只不过 align-self 是对单个项目生效的，而 align-items 则是对容器下的所有项目生效的。</p>
+<p>容器 align-items 设置为 flex-start，而第三个项目的 align-self 值为 flex-end。</p>
 
           
         
@@ -415,7 +488,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -460,7 +533,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
